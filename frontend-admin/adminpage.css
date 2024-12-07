@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Keeps space between logo/left elements and right elements */
+    align-items: center;
+    padding: 20px;
+    background: #561C24;
+    color: white;
+}
+
+* Styling for Profile, Login links */
+.header-left a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #561C24;
+    border-radius: 5px;
+}
+
+.header-left a:hover {
+    color: #A68B7B;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid Layout for Icons */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px; /* Smaller width for better alignment */
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8D8C4;
+  border-radius: 10px;
+  padding: 2rem;
+  text-decoration: none;
+  color: #561C24;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.icon-box i {
+  font-size: 4rem; /* Larger Icon Size */
+  margin-bottom: 1rem;
+}
+
+.icon-box p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.icon-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Colors for Icons */
+.icon-products {
+  color: #e91e63; /* Pink */
+}
+
+.icon-orders {
+  color: #4caf50; /* Green */
+}
+
+.icon-users {
+  color: #ff9800; /* Orange */
+}
+
+.icon-analytics {
+  color: #2196f3; /* Blue */
+}

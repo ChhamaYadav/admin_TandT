@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <h1>Twirls And Twine</h1>
+</header>
+
+<main>
+    <div class="orders-management">
+        <h2>Orders Management</h2>
+    </div>
+    <!-- Search and Filter Section -->
+    <div class="search-filter">
+        <input type="text" id="searchOrderInput" class="search-input" placeholder="Search by order ID, customer name, or status...">
+        <select id="statusFilter" class="filter-dropdown">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Dispatched</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+    </div>
+
+    <!-- Order Table -->
+    <table class="order-table">
+        <thead>
+        <tr>
+            <th onclick="sortTable(0)">Order ID <i class="fas fa-sort"></i></th>
+            <th onclick="sortTable(1)">Customer Name <i class="fas fa-sort"></i></th>
+            <th onclick="sortTable(2)">Date <i class="fas fa-sort"></i></th>
+            <th onclick="sortTable(3)">Total Amount <i class="fas fa-sort"></i></th>
+            <th onclick="sortTable(4)">Status <i class="fas fa-sort"></i></th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="orderTableBody">
+        <!-- Sample Order Rows -->
+        <tr>
+            <td>#O1234</td>
+            <td>Jane Doe</td>
+            <td>2024-12-01</td>
+            <td>$120.00</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+                <button class="view-btn"><i class="fas fa-eye"></i></button>
+                <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td>#O1235</td>
+            <td>John Smith</td>
+            <td>2024-12-03</td>
+            <td>$75.50</td>
+            <td><span class="status completed">Completed</span></td>
+            <td>
+                <button class="view-btn"><i class="fas fa-eye"></i></button>
+                <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prevPage" class="page-btn">Prev</button>
+        <span id="currentPage">1</span> / <span id="totalPages">1</span>
+        <button id="nextPage" class="page-btn">Next</button>
+    </div>
+</main>
+
+<script src="orders.js"></script>
+</body>
+</html>

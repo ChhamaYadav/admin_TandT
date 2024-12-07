@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <h1>User Management</h1>
+    <button class="add-user-btn" onclick="openUserModal()">+ Add User</button>
+</header>
+
+<!-- Users Header -->
+<div class="users-header">
+    <h2>Manage Users</h2>
+</div>
+
+<!-- Search and Filter -->
+<div class="search-filter">
+    <input type="text" class="search-input" placeholder="Search users...">
+    <select class="filter-dropdown">
+        <option value="">Filter by Role</option>
+        <option value="admin">Admin</option>
+        <option value="customer">Customer</option>
+        <option value="guest">Guest</option>
+    </select>
+</div>
+
+<!-- User Table -->
+<table class="user-table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Example Row -->
+    <tr>
+        <td>1</td>
+        <td>John Doe</td>
+        <td>john.doe@example.com</td>
+        <td>Admin</td>
+        <td>Active</td>
+        <td class="user-actions">
+            <button class="view-profile-btn" onclick="viewProfile(1)">View Profile</button>
+            <button class="edit-btn" onclick="editUser(1)">Edit</button>
+            <button class="delete-btn" onclick="deleteUser(1)">Delete</button>
+        </td>
+    </tr>
+    <!-- Add more rows dynamically -->
+    </tbody>
+</table>
+
+<!-- Pagination -->
+<div class="pagination">
+    <button class="page-btn">Previous</button>
+    <button class="page-btn">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">Next</button>
+</div>
+
+<!-- Modal -->
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeUserModal()">&times;</span>
+        <h3>Add/Edit User</h3>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter user name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter user email" required>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+                <option value="guest">Guest</option>
+            </select>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+
+            <button type="submit">Save User</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // JavaScript for Modal
+    function openUserModal() {
+      document.getElementById('userModal').style.display = 'block';
+    }
+
+    function closeUserModal() {
+      document.getElementById('userModal').style.display = 'none';
+    }
+
+    function viewProfile(userId) {
+      alert('Viewing profile for user ID: ' + userId);
+    }
+
+    function editUser(userId) {
+      alert('Editing user ID: ' + userId);
+      openUserModal();
+    }
+
+    function deleteUser(userId) {
+      if (confirm('Are you sure you want to delete user ID: ' + userId + '?')) {
+        alert('User ID: ' + userId + ' deleted');
+      }
+    }
+</script>
+</body>
+</html>
