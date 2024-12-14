@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Analytics</title>
+    <link rel="stylesheet" href="analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+</head>
+<body>
+<header style="background-color: #561C24; color: white; padding: 1rem;">
+    <h1>Analytics Dashboard</h1>
+</header>
+
+<main>
+    <!-- Horizontal Layout for Sales and Customer -->
+    <div class="analytics-overview">
+        <div class="analytics-box">
+            <h3>Sales</h3>
+            <div class="value">$12,450</div>
+            <div class="subtext">Total revenue this month</div>
+        </div>
+        <div class="analytics-box">
+            <h3>Customers</h3>
+            <div class="value">320</div>
+            <div class="subtext">New customers this month</div>
+        </div>
+    </div>
+
+    <!-- Other analytics sections can go here -->
+    <section>
+        <h2>Detailed Charts</h2>
+        <canvas id="salesChart"></canvas>
+    </section>
+</main>
+
+
+<footer style="background-color: #561C24; color: white; text-align: center; padding: 1rem;">
+    <p>© 2024 Twirls and Twine Admin</p>
+</footer>
+
+<script src="analytics.js"></script>
+</body>
+</html>
